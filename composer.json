@@ -1,0 +1,21 @@
+{
+    "name": "alex290/yii2-admin",
+    "description": "Yii2 Admin тема",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alex WebGoal",
+            "email": "alexmar12@yandex.ru"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "alex290\\admin\\": ""
+        }
+    }
+}
