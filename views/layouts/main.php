@@ -34,32 +34,26 @@ alex290\admin\assets\Asset::register($this);
                 <!-- Sidebar Navigation Menus-->
                 <div class="main-menu">
                     <h5 class="sidenav-heading">Main</h5>
-                    <ul id="side-main-menu" class="side-menu list-unstyled">                  
-                        <li><a href="index.html"> <i class="icon-home"></i>Home                             </a></li>
-                        <li><a href="forms.html"> <i class="icon-form"></i>Forms                             </a></li>
-                        <li><a href="charts.html"> <i class="fa fa-bar-chart"></i>Charts                             </a></li>
-                        <li><a href="tables.html"> <i class="icon-grid"></i>Tables                             </a></li>
-                        <li><a href="#exampledropdownDropdown" aria-expanded="false" data-toggle="collapse"> <i class="icon-interface-windows"></i>Example dropdown </a>
-                            <ul id="exampledropdownDropdown" class="collapse list-unstyled ">
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                                <li><a href="#">Page</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="login.html"> <i class="icon-interface-windows"></i>Login page </a></li>
-                        <li> <a href="#"> <i class="icon-mail"></i>Demo
-                                <div class="badge badge-warning">6 New</div></a></li>
-                    </ul>
-                </div>
-                <div class="admin-menu">
-                    <h5 class="sidenav-heading">Second menu</h5>
-                    <ul id="side-admin-menu" class="side-menu list-unstyled"> 
-                        <li> <a href="#"> <i class="icon-screen"> </i>Demo</a></li>
-                        <li> <a href="#"> <i class="icon-flask"> </i>Demo
-                                <div class="badge badge-info">Special</div></a></li>
-                        <li> <a href=""> <i class="icon-flask"> </i>Demo</a></li>
-                        <li> <a href=""> <i class="icon-picture"> </i>Demo</a></li>
-                    </ul>
+                    <!--Боковое меню-->
+                    <?=
+                    alex290\admin\widgets\Menu::widget([
+                        "items" => [
+                            ["label" => "Home", "url" => "/", "icon" => "fas fa-home"],
+                            ["label" => "Layout", "url" => ["/site/layout"], "icon" => "far fa-file"],
+                            ["label" => "Error page", "url" => ["/site/error-page"], "icon" => "far fa-window-close"],
+                            ["label" => "Admin", "url" => ["/admin"], "icon" => "fas fa-user-lock"],
+                            [
+                                "label" => "Widgets",
+                                "icon" => "fas fa-th-large",
+                                "url" => "#",
+                                "items" => [
+                                    ["label" => "Menu", "url" => ["/site/menu"]],
+                                    ["label" => "Panel", "url" => ["/site/panel"]],
+                                ],
+                            ]
+                        ]
+                    ])
+                    ?>
                 </div>
             </div>
         </nav>
@@ -151,9 +145,10 @@ alex290\admin\assets\Asset::register($this);
                     <div class="row">
                         <!-- To Do List-->
                         <div class="col-12">
+
                             <?= $content ?>
                         </div>
-                        
+
                     </div>
                 </div>
             </section>
@@ -161,11 +156,10 @@ alex290\admin\assets\Asset::register($this);
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-sm-6">
-                            <p>Your company &copy; 2017-2019</p>
+                            <p>Your company &copy; <?= date('Y') ?></p>
                         </div>
                         <div class="col-sm-6 text-right">
-                            <p>Design by <a href="https://bootstrapious.com" class="external">Bootstrapious</a></p>
-                            <!-- Please do not remove the backlink to us unless you support further theme's development at https://bootstrapious.com/donate. It is part of the license conditions and it helps me to run Bootstrapious. Thank you for understanding :)-->
+                            <p>Design by <a href="http://webgoal.ru" class="external">WebGoal</a></p>
                         </div>
                     </div>
                 </div>
