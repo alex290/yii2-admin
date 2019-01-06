@@ -121,7 +121,7 @@ alex290\admin\assets\Asset::register($this);
                                 </li>
 
                                 <!-- Log out-->
-                                <li class="nav-item"><a href="login.html" class="nav-link logout"> <span class="d-none d-sm-inline-block">Logout</span><i class="fas fa-sign-out-alt"></i></a></li>
+                                <li class="nav-item"><a href="/site/logout" class="nav-link logout" data-method = 'post'> <span class="d-none d-sm-inline-block">Logout</span><i class="fas fa-sign-out-alt"></i></a></li>
                             </ul>
                         </div>
                     </div>
