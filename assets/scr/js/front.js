@@ -30,6 +30,17 @@ jQuery(document).ready(function($) {
     });
 
     // ------------------------------------------------------- //
+    // Left Navbar Functionality
+    // ------------------------------------------------------ //
+
+    $('ul#side-main-menu > li').each(function(index, el) {
+        if ($(this).find('ul > li').hasClass('active')) {
+            $(this).children('a').attr('aria-expanded', 'true');
+            $(this).children('ul').addClass('show');
+        }
+    });
+
+    // ------------------------------------------------------- //
     // Tooltips init
     // ------------------------------------------------------ //    
 
