@@ -16,11 +16,13 @@ class ThemeScrAsset extends AssetBundle
     public $css = [
         'css/style.default.css',
         'css/custom.css',
+        'css/jquery-ui.min.css',
     ];
     
     public $js = [
         'js/grasp_mobile_progress_circle-1.0.0.min.js',
 //        'js/charts-home.js',
         'js/front.js',
+        'js/jquery-ui.min.js',
     ];
 }
