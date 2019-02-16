@@ -24,5 +24,6 @@ class ThemeScrAsset extends AssetBundle
 //        'js/charts-home.js',
         'js/front.js',
         'js/jquery-ui.min.js',
+        'js/datepicker-ru.js',
     ];
 }
