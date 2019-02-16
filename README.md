@@ -2,7 +2,7 @@ Yii2 Admin тема
 ===============
 Yii2 Admin тема
 
-Installation
+Установка
 ------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
@@ -21,11 +21,3 @@ or add
 
 to the require section of your `composer.json` file.
 
-
-Usage
------
-
-Once the extension is installed, simply use it in your code by  :
-
-```php
-<?= \alex290\admin\AutoloadExample::widget(); ?>```
