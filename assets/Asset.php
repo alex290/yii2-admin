@@ -12,6 +12,8 @@ class Asset extends \yii\web\AssetBundle
 
     public $depends = [
         'alex290\admin\assets\BootstrapAsset',
+        'alex290\admin\assets\VendorAsset',
+        'alex290\admin\assets\ThemeAsset',
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapPluginAsset',
     ];
