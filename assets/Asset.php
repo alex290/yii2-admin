@@ -9,17 +9,15 @@ namespace alex290\admin\assets;
 
 class Asset extends \yii\web\AssetBundle
 {
+
     public $depends = [
-        'alex290\admin\assets\ThemeAsset',
-        'alex290\admin\assets\FontawesomeAsset',
-        'alex290\admin\assets\FontAsset',
         'alex290\admin\assets\BootstrapAsset',
-        'alex290\admin\assets\VendorAsset',
-        'alex290\admin\assets\ThemeScrAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
-    
-    
-    public function init() {
+
+    public function init()
+    {
         parent::init();
         // resetting BootstrapAsset to not load own css files
         \Yii::$app->assetManager->bundles['yii\\bootstrap\\BootstrapAsset'] = [
