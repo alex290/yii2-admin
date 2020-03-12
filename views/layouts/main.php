@@ -19,6 +19,7 @@ alex290\admin\assets\Asset::register($this);
     <body>
         <?php $this->beginBody() ?>
 
+        
         <!-- Side Navbar -->
         <nav class="side-navbar">
             <div class="side-navbar-wrapper">
