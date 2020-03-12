@@ -25,8 +25,8 @@ alex290\admin\assets\Asset::register($this);
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-          <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo" /></a>
-          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo" /></a>
+          <a class="navbar-brand brand-logo" href="index.html"><img src="http://placehold.it/128x128" alt="logo" /></a>
+          <a class="navbar-brand brand-logo-mini" href="index.html"><img src="http://placehold.it/128x128" alt="logo" /></a>
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -55,7 +55,7 @@ alex290\admin\assets\Asset::register($this);
               <p class="mb-0 font-weight-normal float-left dropdown-header">Messages</p>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                  <img src="images/faces/face4.jpg" alt="image" class="profile-pic">
+                  <img src="http://placehold.it/128x128" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
                   <h6 class="ellipsis font-weight-normal">David Grey
@@ -67,7 +67,7 @@ alex290\admin\assets\Asset::register($this);
               </a>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                  <img src="images/faces/face2.jpg" alt="image" class="profile-pic">
+                  <img src="http://placehold.it/128x128" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
                   <h6 class="ellipsis font-weight-normal">Tim Cook
@@ -79,7 +79,7 @@ alex290\admin\assets\Asset::register($this);
               </a>
               <a class="dropdown-item">
                 <div class="item-thumbnail">
-                  <img src="images/faces/face3.jpg" alt="image" class="profile-pic">
+                  <img src="http://placehold.it/128x128" alt="image" class="profile-pic">
                 </div>
                 <div class="item-content flex-grow">
                   <h6 class="ellipsis font-weight-normal"> Johnson
@@ -141,7 +141,7 @@ alex290\admin\assets\Asset::register($this);
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face5.jpg" alt="profile" />
+              <img src="http://placehold.it/128x128" alt="profile" />
               <span class="nav-profile-name">Louis Barnett</span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
@@ -149,7 +149,7 @@ alex290\admin\assets\Asset::register($this);
                 <i class="mdi mdi-settings text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a href="/site/logout" class="dropdown-item" data-method = 'post'>
                 <i class="mdi mdi-logout text-primary"></i>
                 Logout
               </a>
