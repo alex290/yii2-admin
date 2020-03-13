@@ -7,6 +7,8 @@ Yii2 Admin theme
 
 *Backend UI for Yii2 Framework, based on [MajesticAdmin-Free-Bootstrap-Admin-Template](https://github.com/Urbanui/MajesticAdmin-Free-Bootstrap-Admin-Template)*
 
+!["Yii2 Admin Theme"](https://github.com/alex290/yii2-admin/blob/master/screen.png)
+
 Установка
 ------------
 
