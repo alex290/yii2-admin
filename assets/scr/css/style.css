@@ -20849,7 +20849,7 @@ code {
 
 .form-control,
 .dataTables_wrapper select {
-    border: 1px solid #666666;
+    border: 1px solid #bebebe;
     font-weight: 400;
     font-size: 0.875rem;
 }
@@ -20858,13 +20858,13 @@ select.form-control,
 .dataTables_wrapper select {
     padding: .4375rem .75rem;
     border: 0;
-    outline: 1px solid #f3f3f3;
+    outline: 1px solid #bebebe;
     color: #c9c8c8;
 }
 
 select.form-control:focus,
 .dataTables_wrapper select:focus {
-    outline: 1px solid #f3f3f3;
+    outline: 1px solid #bebebe;
 }
 
 select.form-control.border-primary,
