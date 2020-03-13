@@ -9,7 +9,7 @@ Yii2 Admin theme
 
 !["Yii2 Admin Theme"](https://github.com/alex290/yii2-admin/blob/master/screen.png)
 
-Установка
+Installation
 ------------
 
 The preferred way to install this extension is through [composer](http://getcomposer.org/download/).
