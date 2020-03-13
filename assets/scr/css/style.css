@@ -10451,7 +10451,7 @@ pre code {
     color: #495057;
     background-color: #ffffff;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    /* border: 1px solid #ced4da; */
     border-radius: 2px;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -10473,7 +10473,7 @@ pre code {
 .dataTables_wrapper select:focus {
     color: #495057;
     background-color: #fff;
-    border-color: #80bdff;
+    border-color: #3b3b3b;
     outline: 0;
     box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
 }
