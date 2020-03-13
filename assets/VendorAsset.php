@@ -17,6 +17,8 @@ class VendorAsset extends AssetBundle
     public $css = [
         'mdi/css/materialdesignicons.min.css',
         'base/vendor.bundle.base.css',
+        'fontawesome/css/all.css',
+        'fontawesome/css/solid.css',
         'datatables.net-bs4/dataTables.bootstrap4.css',
     ];
 
