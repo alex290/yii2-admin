@@ -25,7 +25,7 @@ $url = Url::to();
                 </a>
             </li>
         <?php else : ?>
-            <li class="<?= $classLi ?>">
+            <li class="nav-item">
                 <a class="nav-link" data-toggle="collapse" href="#drop<?= $key ?>" aria-expanded="false" aria-controls="drop<?= $key ?>">
                     <i class="mdi <?= $valueItem['icon'] ?> menu-icon"></i>
                     <span class="menu-title"><?= $valueItem['label'] ?></span>
