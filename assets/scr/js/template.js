@@ -14,7 +14,7 @@
 
 
             if (element.hasClass('active')) {
-                console.log(element);
+                
                 element.parents('.nav-item').last().addClass('active');
                 if (element.parents('.sub-menu').length) {
                     element.closest('.collapse').addClass('show');
