@@ -1,6 +1,6 @@
-(function($) {
+(function ($) {
     'use strict';
-    $(function() {
+    $(function () {
         var body = $('body');
         var contentWrapper = $('.content-wrapper');
         var scroller = $('.container-scroller');
@@ -11,6 +11,19 @@
         //Active class can be hard coded directly in html file also as required
 
         function addActiveClass(element) {
+
+
+            if (element.hasClass('active')) {
+                console.log(element);
+                element.parents('.nav-item').last().addClass('active');
+                if (element.parents('.sub-menu').length) {
+                    element.closest('.collapse').addClass('show');
+                }
+            } else {
+
+            }
+
+            /*
             if (current === "") {
                 //for root url
                 if (element.attr('href').indexOf("index.html") !== -1) {
@@ -33,24 +46,25 @@
                     }
                 }
             }
+            */
         }
 
         var current = location.pathname.split("/").slice(-1)[0].replace(/^\/|\/$/g, '');
-        $('.nav li a', sidebar).each(function() {
+        $('.nav li a', sidebar).each(function () {
             var $this = $(this);
             addActiveClass($this);
         })
 
         //Close other submenu in sidebar on opening any
 
-        sidebar.on('show.bs.collapse', '.collapse', function() {
+        sidebar.on('show.bs.collapse', '.collapse', function () {
             sidebar.find('.collapse.show').collapse('hide');
         });
 
 
         //Change sidebar
 
-        $('[data-toggle="minimize"]').on("click", function() {
+        $('[data-toggle="minimize"]').on("click", function () {
             body.toggleClass('sidebar-icon-only');
         });
 

@@ -4,11 +4,13 @@ use yii\helpers\Url;
 
 $numbDropdown = 1;
 $url = Url::to();
+// debug($url);
 ?>
 <ul class="nav">
     <?php foreach ($menuItem as $key => $valueItem) : ?>
         <?php
         $urlTo = is_array($valueItem['url']) ? Url::to($valueItem['url']['0']) : Url::to($valueItem['url']);
+        // debug($urlTo);
         if ($url == $urlTo) {
             $classLi = 'nav-item active';
         } else {
@@ -36,8 +38,14 @@ $url = Url::to();
                         <?php foreach ($valueItem['items'] as $valueItemDrop) : ?>
                             <?php
                             $urlTo = is_array($valueItemDrop['url']) ? Url::to($valueItemDrop['url']['0']) : Url::to($valueItemDrop['url']);
+
+                            if ($url == $urlTo) {
+                                $classLia = 'nav-link active';
+                            } else {
+                                $classLia = 'nav-link';
+                            }
                             ?>
-                            <li class="nav-item"><a class="nav-link" href="<?= $urlTo ?>"><?= $valueItemDrop['label'] ?></a></li>
+                            <li class="nav-item"><a class="<?= $classLia ?>" href="<?= $urlTo ?>"><?= $valueItemDrop['label'] ?></a></li>
                         <?php endforeach; ?>
                     </ul>
                 </div>
