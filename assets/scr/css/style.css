@@ -21805,10 +21805,10 @@ dl li {
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-arrow:before {
-    content: "\F140";
+    /* content: "\F143";
     font-family: "Material Design Icons";
     font-style: normal;
-    display: block;
+    display: block; */
     font-size: 1rem;
     line-height: 10px;
     -webkit-transition: all 0.2s ease-in;

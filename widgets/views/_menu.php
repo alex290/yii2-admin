@@ -31,7 +31,7 @@ $url = Url::to();
                 <a class="nav-link" data-toggle="collapse" href="#drop<?= $key ?>" aria-expanded="false" aria-controls="drop<?= $key ?>">
                     <i class="mdi <?= $valueItem['icon'] ?> menu-icon"></i>
                     <span class="menu-title"><?= $valueItem['label'] ?></span>
-                    <i class="menu-arrow"></i>
+                    <i class="menu-arrow mdi mdi-chevron-up"></i>
                 </a>
                 <div class="collapse" id="drop<?= $key ?>">
                     <ul class="nav flex-column sub-menu">
