@@ -15,6 +15,7 @@ class ThemeAsset extends AssetBundle
     public $sourcePath = '@alex290/admin/assets/scr';
 
     public $css = [
+        'css/glyphicons.css',
         'css/style.css',
     ];
 
