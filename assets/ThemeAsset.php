@@ -15,17 +15,11 @@ class ThemeAsset extends AssetBundle
     public $sourcePath = '@alex290/admin/assets/scr';
 
     public $css = [
-        'css/glyphicons.css',
-        'css/style.css',
+        'css/app.css',
+        'fonts/inter/stylesheet.css',
     ];
 
     public $js = [
-        'js/off-canvas.js',
-        'js/hoverable-collapse.js',
-        'js/template.js',
-        'js/dashboard.js',
-        'js/data-table.js',
-        'js/jquery.dataTables.js',
-        'js/dataTables.bootstrap4.js',
+        'js/app.js',
     ];
 }
