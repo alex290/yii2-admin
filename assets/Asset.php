@@ -11,9 +11,10 @@ class Asset extends \yii\web\AssetBundle
 {
 
     public $depends = [
-        'alex290\admin\assets\BootstrapAsset',
+        // 'alex290\admin\assets\BootstrapAsset',
         'alex290\admin\assets\ThemeAsset',
     ];
+
 
     public function init()
     {
