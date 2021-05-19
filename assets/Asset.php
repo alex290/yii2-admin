@@ -10,25 +10,13 @@ namespace alex290\admin\assets;
 class Asset extends \yii\web\AssetBundle
 {
 
-    // public $depends = [
-    //     'alex290\admin\assets\BootstrapAsset',
-    //     'alex290\admin\assets\ThemeAsset',
-    // ];
+    public $depends = [
+        'alex290\admin\assets\BootstrapAsset',
+        'alex290\admin\assets\ThemeAsset',
+    ];
 
     public $sourcePath = '@alex290/admin/assets/scr';
     
-    public $css = [
-        'css/bootstrap.min.css',
-        'css/main.css',
-    ];
-    public $js = [
-        'js/popper.min.js',
-        'js/bootstrap.min.js',
-    ];
-    public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\web\YiiAsset',
-    ];
 
 
     public function init()
