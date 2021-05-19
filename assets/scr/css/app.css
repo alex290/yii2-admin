@@ -247,7 +247,7 @@ a.sidebar-link {
     height: 40px;
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle.user:after {
     margin-left: .255em;
     vertical-align: .255em;
     content: "";
@@ -257,7 +257,7 @@ a.sidebar-link {
     border-left: .3em solid transparent;
 }
 
-.dropdown-toggle:after {
+.dropdown-toggle.user:after {
     border: solid;
     border-width: 0 2px 2px 0;
     display: inline-block;
@@ -290,4 +290,41 @@ a.sidebar-link {
 
 .dropdown-item svg {
     margin-right: .25rem!important;
+}
+
+.nav-flag,
+.nav-icon {
+    padding: .1rem .8rem;
+    display: block;
+    font-size: 1.5rem;
+    color: #6c757d;
+    transition: background .1s ease-in-out, color .1s ease-in-out;
+    line-height: 1.4;
+}
+
+.nav-icon.dropdown-toggle::after {
+    display: none;
+}
+
+.nav-flag svg,
+.nav-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.nav-item .indicator {
+    background: #3b7ddd;
+    box-shadow: 0 0.1rem 0.2rem rgb(0 0 0 / 5%);
+    border-radius: 50%;
+    display: block;
+    height: 18px;
+    width: 18px;
+    padding: 1px;
+    position: absolute;
+    top: 0;
+    right: -8px;
+    text-align: center;
+    transition: top .1s ease-out;
+    font-size: .675rem;
+    color: #fff;
 }
