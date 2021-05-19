@@ -1,40 +1,33 @@
 <?php
 
+use alex290\admin\assets\Asset;
+use alex290\admin\widgets\Menu;
+use app\widgets\Alert;
 use yii\helpers\Html;
 use yii\widgets\Breadcrumbs;
 
-alex290\admin\assets\Asset::register($this);
+Asset::register($this);
+
+
 
 $menuLeft = [
     "items" => [
-        ["label" => "Home", "url" => "/", "icon" => "mdi-home"],
+        ["type" => "header", "label" => "Pages"],
+        ["type" => "item", "label" => "Home", "url" => ["/admin"], "icon" => '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="home" class="svg-inline--fa fa-home fa-w-18" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z"></path></svg>'],
         [
-            "label" => "UI Elements",
-            "icon" => "mdi-circle-outline",
+            "type" => "item",
+            "label" => "Auth",
+            "icon" => '<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="user" class="svg-inline--fa fa-user fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"></path></svg>',
             "url" => "#",
             "items" => [
-                ["label" => "Buttons", "url" => ["#"]],
-                ["label" => "Typography", "url" => ["#"]],
+                ["label" => "Sign In", "url" => ["#"]],
+                ["label" => "Sign Up", "url" => ["#"]],
             ],
         ],
-        ["label" => "Form elements", "url" => ["#"], "icon" => "mdi-view-headline"],
-        ["label" => "Charts", "url" => ["#"], "icon" => "mdi-chart-pie"],
-        ["label" => "Tables", "url" => ["#"], "icon" => "mdi-grid-large"],
-        ["label" => "Icons", "url" => ["#"], "icon" => "mdi-emoticon"],
-        [
-            "label" => "User Pages",
-            "icon" => "mdi-account",
-            "url" => "#",
-            "items" => [
-                ["label" => "Login", "url" => ["#"]],
-                ["label" => "Login 2", "url" => ["#"]],
-                ["label" => "Register", "url" => ["#"]],
-                ["label" => "Register 2", "url" => ["#"]],
-            ],
-            ["label" => "Documentation", "url" => ["#"], "icon" => "mdi-file-document"],
-        ]
+
     ]
 ];
+
 ?>
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
@@ -43,147 +36,51 @@ $menuLeft = [
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <?= Html::csrfMetaTags() ?>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php $this->registerCsrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 </head>
 
 <body>
     <?php $this->beginBody() ?>
-    <div class="wrapper">
-        <nav id="sidebar" class="sidebar js-sidebar">
-            <div class="sidebar-content js-simplebar">
-                <a class="sidebar-brand" href="index.html">
-                    <span class="align-middle">AdminKit</span>
-                </a>
 
-                <ul class="sidebar-nav">
-                    <li class="sidebar-header">
-                        Pages
-                    </li>
-
-                    <li class="sidebar-item active">
-                        <a class="sidebar-link" href="index.html">
-                            <i class="align-middle" data-feather="sliders"></i> <span class="align-middle">Dashboard</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-profile.html">
-                            <i class="align-middle" data-feather="user"></i> <span class="align-middle">Profile</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-settings.html">
-                            <i class="align-middle" data-feather="settings"></i> <span class="align-middle">Settings</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-invoice.html">
-                            <i class="align-middle" data-feather="credit-card"></i> <span class="align-middle">Invoice</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="pages-blank.html">
-                            <i class="align-middle" data-feather="book"></i> <span class="align-middle">Blank</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a href="#auth" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="users"></i> <span class="align-middle">Auth</span>
-                        </a>
-                        <ul id="auth" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="pages-sign-in.html">Sign In</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="pages-sign-up.html">Sign Up</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-header">
-                        Tools & Components
-                    </li>
-                    <li class="sidebar-item">
-                        <a data-bs-target="#ui" data-bs-toggle="collapse" class="sidebar-link collapsed">
-                            <i class="align-middle" data-feather="briefcase"></i> <span class="align-middle">UI Elements</span>
-                        </a>
-                        <ul id="ui" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-alerts.html">Alerts</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-buttons.html">Buttons</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-cards.html">Cards</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-general.html">General</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-grid.html">Grid</a></li>
-                            <li class="sidebar-item"><a class="sidebar-link" href="ui-typography.html">Typography</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="icons-feather.html">
-                            <i class="align-middle" data-feather="coffee"></i> <span class="align-middle">Icons</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="forms-basic-inputs.html">
-                            <i class="align-middle" data-feather="check-circle"></i> <span class="align-middle">Forms</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-header">
-                        Plugins & Addons
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="charts-chartjs.html">
-                            <i class="align-middle" data-feather="bar-chart-2"></i> <span class="align-middle">Charts</span>
-                        </a>
-                    </li>
-
-                    <li class="sidebar-item">
-                        <a class="sidebar-link" href="maps-google.html">
-                            <i class="align-middle" data-feather="map"></i> <span class="align-middle">Maps</span>
-                        </a>
-                    </li>
-                </ul>
-
-                <div class="sidebar-cta">
-                    <div class="sidebar-cta-content">
-                        <strong class="d-inline-block mb-2">Upgrade to Pro</strong>
-                        <div class="mb-3 text-sm">
-                            Are you looking for more components? Check out our premium version.
-                        </div>
-                        <div class="d-grid">
-                            <a href="https://adminkit.io/pricing" target="_blank" class="btn btn-primary">Upgrade to Pro</a>
-                        </div>
-                    </div>
+    <div class="wrap">
+        <nav id="sidebar" class="sidebar">
+            <div class="sidebar-content">
+                <div class="sidebar-brand">
+                    <span class="align-middle">Admin</span>
                 </div>
+                <?= Menu::widget($menuLeft) ?>
             </div>
         </nav>
-
         <div class="main">
             <nav class="navbar navbar-expand navbar-light navbar-bg">
-                <a class="sidebar-toggle js-sidebar-toggle">
-                    <i class="hamburger align-self-center"></i>
-                </a>
-
-                <form class="d-none d-sm-inline-block">
-                    <div class="input-group input-group-navbar">
-                        <input type="text" class="form-control" placeholder="SearchвЂ¦" aria-label="Search">
-                        <button class="btn" type="button">
-                            <i class="align-middle" data-feather="search"></i>
-                        </button>
+                <div class="d-flex align-items-center">
+                    <div class="sidebar-toggle" onclick="colapsSidebar()">
+                        <i class="hamburger align-self-center"></i>
                     </div>
-                </form>
-
+                    <form class="d-none d-sm-inline-block">
+                        <div class="input-group input-group-navbar">
+                            <input type="text" class="form-control" placeholder="Search…" aria-label="Search">
+                            <button class="btn" type="button">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search align-middle">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
                 <div class="navbar-collapse collapse">
                     <ul class="navbar-nav navbar-align">
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="alertsDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="position-relative">
-                                    <i class="align-middle" data-feather="bell"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell align-middle">
+                                        <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                        <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                    </svg>
                                     <span class="indicator">4</span>
                                 </div>
                             </a>
@@ -195,7 +92,11 @@ $menuLeft = [
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <i class="text-danger" data-feather="alert-circle"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle text-danger">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                                </svg>
                                             </div>
                                             <div class="col-10">
                                                 <div class="text-dark">Update completed</div>
@@ -207,7 +108,10 @@ $menuLeft = [
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <i class="text-warning" data-feather="bell"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bell text-warning">
+                                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                                </svg>
                                             </div>
                                             <div class="col-10">
                                                 <div class="text-dark">Lorem ipsum</div>
@@ -219,7 +123,10 @@ $menuLeft = [
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <i class="text-primary" data-feather="home"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home text-primary">
+                                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                                </svg>
                                             </div>
                                             <div class="col-10">
                                                 <div class="text-dark">Login from 192.186.1.8</div>
@@ -230,7 +137,12 @@ $menuLeft = [
                                     <a href="#" class="list-group-item">
                                         <div class="row g-0 align-items-center">
                                             <div class="col-2">
-                                                <i class="text-success" data-feather="user-plus"></i>
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-plus text-success">
+                                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                                    <circle cx="8.5" cy="7" r="4"></circle>
+                                                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                                                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                                                </svg>
                                             </div>
                                             <div class="col-10">
                                                 <div class="text-dark">New connection</div>
@@ -246,9 +158,11 @@ $menuLeft = [
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown">
+                            <a class="nav-icon dropdown-toggle" href="#" id="messagesDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                                 <div class="position-relative">
-                                    <i class="align-middle" data-feather="message-square"></i>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-square align-middle">
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
                                 </div>
                             </a>
                             <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end py-0" aria-labelledby="messagesDropdown">
@@ -313,19 +227,29 @@ $menuLeft = [
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-icon dropdown-toggle d-inline-block d-sm-none" href="#" data-bs-toggle="dropdown">
-                                <i class="align-middle" data-feather="settings"></i>
-                            </a>
 
-                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown">
-                                <img src="img/avatars/avatar.jpg" class="avatar img-fluid rounded me-1" alt="Charles Hall" /> <span class="text-dark">Charles Hall</span>
+                            <a class="nav-link dropdown-toggle d-none d-sm-inline-block" href="#" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://raw.githubusercontent.com/alex290/yii2-admin/devel/_dev/avatar.png" class="avatar img-fluid rounded me-1" alt=""> <span class="text-dark">Charles Hall</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-end">
-                                <a class="dropdown-item" href="pages-profile.html"><i class="align-middle me-1" data-feather="user"></i> Profile</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="pie-chart"></i> Analytics</a>
+                                <a class="dropdown-item" href="pages-profile.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user align-middle me-1">
+                                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="12" cy="7" r="4"></circle>
+                                    </svg> Profile</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pie-chart align-middle me-1">
+                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path>
+                                        <path d="M22 12A10 10 0 0 0 12 2v10z"></path>
+                                    </svg> Analytics</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="pages-settings.html"><i class="align-middle me-1" data-feather="settings"></i> Settings & Privacy</a>
-                                <a class="dropdown-item" href="#"><i class="align-middle me-1" data-feather="help-circle"></i> Help Center</a>
+                                <a class="dropdown-item" href="pages-settings.html"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings align-middle me-1">
+                                        <circle cx="12" cy="12" r="3"></circle>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                                    </svg> Settings &amp; Privacy</a>
+                                <a class="dropdown-item" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-help-circle align-middle me-1">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                    </svg> Help Center</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="#">Log out</a>
                             </div>
@@ -333,271 +257,30 @@ $menuLeft = [
                     </ul>
                 </div>
             </nav>
-
             <main class="content">
-                <div class="container-fluid p-0">
-
-                    <h1 class="h3 mb-3"><strong>Analytics</strong> Dashboard</h1>
-
-                    <div class="row">
-                        <div class="col-xl-6 col-xxl-5 d-flex">
-                            <div class="w-100">
-                                <div class="row">
-                                    <div class="col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Sales</h5>
-                                                <h1 class="mt-1 mb-3">2.382</h1>
-                                                <div class="mb-1">
-                                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
-                                                    <span class="text-muted">Since last week</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Visitors</h5>
-                                                <h1 class="mt-1 mb-3">14.212</h1>
-                                                <div class="mb-1">
-                                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 5.25% </span>
-                                                    <span class="text-muted">Since last week</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Earnings</h5>
-                                                <h1 class="mt-1 mb-3">$21.300</h1>
-                                                <div class="mb-1">
-                                                    <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
-                                                    <span class="text-muted">Since last week</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <h5 class="card-title mb-4">Orders</h5>
-                                                <h1 class="mt-1 mb-3">64</h1>
-                                                <div class="mb-1">
-                                                    <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -2.25% </span>
-                                                    <span class="text-muted">Since last week</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-xl-6 col-xxl-7">
-                            <div class="card flex-fill w-100">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Recent Movement</h5>
-                                </div>
-                                <div class="card-body py-3">
-                                    <div class="chart chart-sm">
-                                        <canvas id="chartjs-dashboard-line"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-md-6 col-xxl-3 d-flex order-2 order-xxl-3">
-                            <div class="card flex-fill w-100">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Browser Usage</h5>
-                                </div>
-                                <div class="card-body d-flex">
-                                    <div class="align-self-center w-100">
-                                        <div class="py-3">
-                                            <div class="chart chart-xs">
-                                                <canvas id="chartjs-dashboard-pie"></canvas>
-                                            </div>
-                                        </div>
-
-                                        <table class="table mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td>Chrome</td>
-                                                    <td class="text-end">4306</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Firefox</td>
-                                                    <td class="text-end">3801</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>IE</td>
-                                                    <td class="text-end">1689</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-12 col-xxl-6 d-flex order-3 order-xxl-2">
-                            <div class="card flex-fill w-100">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Real-Time</h5>
-                                </div>
-                                <div class="card-body px-4">
-                                    <div id="world_map" style="height:350px;"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-md-6 col-xxl-3 d-flex order-1 order-xxl-1">
-                            <div class="card flex-fill">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Calendar</h5>
-                                </div>
-                                <div class="card-body d-flex">
-                                    <div class="align-self-center w-100">
-                                        <div class="chart">
-                                            <div id="datetimepicker-dashboard"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-12 col-lg-8 col-xxl-9 d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Latest Projects</h5>
-                                </div>
-                                <table class="table table-hover my-0">
-                                    <thead>
-                                        <tr>
-                                            <th>Name</th>
-                                            <th class="d-none d-xl-table-cell">Start Date</th>
-                                            <th class="d-none d-xl-table-cell">End Date</th>
-                                            <th>Status</th>
-                                            <th class="d-none d-md-table-cell">Assignee</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Project Apollo</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-success">Done</span></td>
-                                            <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Fireball</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-danger">Cancelled</span></td>
-                                            <td class="d-none d-md-table-cell">William Harris</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Hades</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-success">Done</span></td>
-                                            <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Nitro</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-warning">In progress</span></td>
-                                            <td class="d-none d-md-table-cell">Vanessa Tucker</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Phoenix</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-success">Done</span></td>
-                                            <td class="d-none d-md-table-cell">William Harris</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project X</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-success">Done</span></td>
-                                            <td class="d-none d-md-table-cell">Sharon Lessman</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Romeo</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-success">Done</span></td>
-                                            <td class="d-none d-md-table-cell">Christina Mason</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Project Wombat</td>
-                                            <td class="d-none d-xl-table-cell">01/01/2021</td>
-                                            <td class="d-none d-xl-table-cell">31/06/2021</td>
-                                            <td><span class="badge bg-warning">In progress</span></td>
-                                            <td class="d-none d-md-table-cell">William Harris</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="col-12 col-lg-4 col-xxl-3 d-flex">
-                            <div class="card flex-fill w-100">
-                                <div class="card-header">
-
-                                    <h5 class="card-title mb-0">Monthly Sales</h5>
-                                </div>
-                                <div class="card-body d-flex w-100">
-                                    <div class="align-self-center chart chart-lg">
-                                        <canvas id="chartjs-dashboard-bar"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="container-fluid">
+                    <?= Breadcrumbs::widget([
+                        'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                    ]) ?>
+                    <?= Alert::widget() ?>
+                    <?= $content ?>
                 </div>
             </main>
-
             <footer class="footer">
                 <div class="container-fluid">
-                    <div class="row text-muted">
-                        <div class="col-6 text-start">
-                            <p class="mb-0">
-                                <a href="index.html" class="text-muted"><strong>AdminKit Demo</strong></a> &copy;
-                            </p>
-                        </div>
-                        <div class="col-6 text-end">
-                            <ul class="list-inline">
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Support</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Help Center</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Privacy</a>
-                                </li>
-                                <li class="list-inline-item">
-                                    <a class="text-muted" href="#">Terms</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                    <p class="pull-left">&copy; WebGoal <?= date('Y') ?></p>
+
+
                 </div>
             </footer>
         </div>
+
     </div>
+
+
 
     <?php $this->endBody() ?>
 </body>
 
 </html>
-
 <?php $this->endPage() ?>
