@@ -328,3 +328,7 @@ a.sidebar-link {
     font-size: .675rem;
     color: #fff;
 }
+
+.dropdown-menu-lg {
+    min-width: 20rem;
+}
