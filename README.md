@@ -5,7 +5,6 @@ Yii2 Admin theme Bootstrap 5
 [![Total Downloads](https://poser.pugx.org/alex290/yii2-admin/downloads)](https://packagist.org/packages/alex290/yii2-admin)
 [![License](https://poser.pugx.org/alex290/yii2-admin/license)](https://packagist.org/packages/alex290/yii2-admin)
 
-*Backend UI for Yii2 Framework, based on [MajesticAdmin-Free-Bootstrap-Admin-Template](https://github.com/Urbanui/MajesticAdmin-Free-Bootstrap-Admin-Template)*
 
 !["Yii2 Admin Theme"](https://github.com/alex290/yii2-admin/blob/master/screen.png)
 
