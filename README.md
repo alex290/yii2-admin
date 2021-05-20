@@ -1,4 +1,4 @@
-Yii2 Admin theme
+Yii2 Admin theme Bootstrap 5
 ===============
 
 [![Latest Stable Version](https://poser.pugx.org/alex290/yii2-admin/v/stable)](https://packagist.org/packages/alex290/yii2-admin)
