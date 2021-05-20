@@ -264,9 +264,14 @@ $menuLeft = [
             </nav>
             <main class="content">
                 <div class="container-fluid">
+                <nav aria-label="breadcrumb">
                     <?= Breadcrumbs::widget([
+                        'itemTemplate' => "<li class=\"breadcrumb-item\">{link}</li>\n", // template for all links
+                        'activeItemTemplate' => "<li class=\"breadcrumb-item active\" aria-current=\"page\">{link}</li>\n",
+                        'tag' => 'ol',
                         'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                     ]) ?>
+                </nav>
                     <?= Alert::widget() ?>
                     <?= $content ?>
                 </div>
