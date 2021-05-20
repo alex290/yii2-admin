@@ -393,3 +393,65 @@ footer.footer {
     direction: ltr;
     background: #fff;
 }
+
+.page-body-wrapper {
+    min-height: calc(100vh - 60px);
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 60px;
+}
+
+.page-body-wrapper.full-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 0;
+}
+
+.auth.auth-img-bg {
+    padding: 0;
+}
+
+.content-wrapper {
+    background: #f3f3f3;
+    padding: 2.1rem 1.04rem;
+    width: 100%;
+    -webkit-flex-grow: 1;
+    flex-grow: 1;
+}
+
+.container-scroller {
+    overflow: hidden;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+.auth .auth-form-transparent {
+    background: transparent;
+}
+
+@media (min-width: 768px) {
+    .auth.auth-img-bg .auth-form-transparent {
+        width: 55%;
+        margin: auto;
+    }
+}
+
+.auth .login-half-bg {
+    background: url(../img/login-bg.jpg);
+    background-size: cover;
+}
+
+.auth .auth-form-light {
+    background: #ffffff;
+}
+
+.auth .register-half-bg {
+    background: url(../img/register-bg.jpg);
+    background-size: cover;
+}
