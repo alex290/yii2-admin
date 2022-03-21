@@ -256,7 +256,12 @@ $menuLeft = [
                                         <line x1="12" y1="17" x2="12.01" y2="17"></line>
                                     </svg> Help Center</a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Log out</a>
+                                <?= Html::beginForm(['/site/logout'], 'post', ['class' => 'form-inline'])
+                                    . Html::submitButton(
+                                        'Logout (' . Yii::$app->user->identity->username . ')',
+                                        ['class' => 'dropdown-item']
+                                    )
+                                    . Html::endForm(); ?>
                             </div>
                         </li>
                     </ul>
